@@ -1,6 +1,7 @@
 def distance (x1, x0, y1, y0):
-    length = ((((x1 - x0)** 2) + ((y1 - y0)** 2))**0.5)
-    return length
+    d = (x1 - x0)**2
+    d = d + (y1 - y0)**2
+    return d**0.5
 
 print(distance(3, 0, 0, 4))
 print(distance(1, 0, 2, 0))
