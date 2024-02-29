@@ -20,7 +20,10 @@ nav {
     padding: 0 3px;
 }
 
-
+body, p 
+{
+    text-decoration-color: rgb(229, 184, 184);
+}
 
 body, h1{
     text-align: center;
