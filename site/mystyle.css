@@ -22,8 +22,10 @@ nav {
 
 body 
 {
-    text-decoration-color: rgb(229, 184, 184);
+    text-decoration-color: red;
     margin-inline-start: auto;
+    size: 25 px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body, h1{
