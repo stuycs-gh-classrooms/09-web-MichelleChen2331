@@ -1,6 +1,6 @@
 html {
     font-size: 24px;
-    background-color: #9A031E;
+    background-color: #ffffff;
   }
   body {
     width: 80%;
@@ -8,13 +8,13 @@ html {
     padding: 0px;
     margin-left: 0px;
     /*margin: auto;*/
-    background-color: #FCDC4D;
+    background-color: #e0615f;
     height: 100vh;
   }
   
   /*navigation list*/
   nav {
-    background-color: #CB793A;
+    background-color: #e4b7b7;
     font-size: 1.5em;
     float: left;
     border-top-left-radius: inherit;
@@ -31,12 +31,25 @@ html {
   
   }
   .current {
-    background-color: #FCDC4D;
+    background-color: #e0615f;
   }
   .navlink {
-    color: #5F0F40;
+    color: #000000;
     text-decoration: none;
     font-variant: all-small-caps;
+  }
+  /*end navigation list .*/
+  
+  .picbox {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    overflow: hidden;
+  }
+  .picbox-image {
+    float: right;
+  }
+  .picbox-text {
+    margin-left: 1.5em;
   }
   
   h1 {
@@ -49,4 +62,3 @@ html {
     font-size: .75em;
     border-top: 1px solid black;
   }
-
