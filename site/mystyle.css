@@ -20,9 +20,10 @@ nav {
     padding: 0 3px;
 }
 
-body, p 
+body 
 {
     text-decoration-color: rgb(229, 184, 184);
+    margin-inline-start: auto;
 }
 
 body, h1{
