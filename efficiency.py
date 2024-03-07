@@ -28,8 +28,8 @@ def euler5(n):
             guess+= 1
             max_divisor = 1
     return guess
-#answer = euler5(10)
-#print("euler5(10): ", answer)
+answer = euler5(10)
+print("euler5(10): ", answer)
 
 #==================================================
 # Problem 0
@@ -44,20 +44,25 @@ def euler5(n):
 def euler5_loop_count(n):
     guess = n
     max_divisor = 1
-
+    loops = 0
     while max_divisor <= n:
-
+        loops += 1
         if guess % max_divisor == 0:
             max_divisor+= 1
         else:
             guess+= 1
             max_divisor = 1
 
-    return guess
+    return loops
+    
 # To test, use this, it should take 25 loops to get the answer
 # which is 12
+print("Testing loop count only:")
 answer = euler5_loop_count(4)
-print("euler5(4): ", answer)
+print("loop count: ", answer)
+print("euler5(4):", euler5(4))
+
+
 
 # End Problem 0
 #==================================================
@@ -74,23 +79,24 @@ print("euler5(4): ", answer)
 
 print("Timing slow version:")
 
-# YOUR CODE HERE
+#YOUR CODE HERE
+# answer = euler5_loop_count(10)
+# print("loop count:", answer)
+# print("euler5(10): ", euler5(10))
+# seconds = time.time() 
+# print("elapsed time: ", seconds)
 
-answer = euler5_loop_count(10)
-# YOUR CODE HERE
 
-print("elapsed time: ")
-print("euler5(10): ", answer)
-
-
-print("Second slow version test:")
+# print("Second slow version test:")
 #YOUR CODE HERE
 
-answer = euler5_loop_count(10)
+# answer = euler5_loop_count(20)
 #YOUR CODE HERE
 
-print("elapsed time: ")
-print("answer euler5(20): ", answer)
+# print("loop count: ", answer)
+# seconds = time.time()
+# print("elapsed time: ", seconds)
+# print("answer euler5(20)", euler5(20))
 
 # End Problem 1
 #==================================================
@@ -121,25 +127,26 @@ print("answer euler5(20): ", answer)
 def euler5_better(n):
     guess = n
     max_divisor = 1
-
-    while max_divisor <= n:
-
+    count = 0 
+    while (max_divisor <= n):
+        count += 1
         if guess % max_divisor == 0:
             max_divisor+= 1
         else:
-            guess+= 1
+            guess+= 20
             max_divisor = 1
 
-    return guess
+    print(count)
 
 print("\nBetter version:")
 # Dont forget to include time code as well
-# YOUR CODE HERE
+loops = euler5_better(2520)
+seconds = time.time()
 
 answer = euler5_better(20)
-# YOUR CODE HERE
-print("elapsed time: ")
-print("answer euler5(20): ", answer)
+print("loop count:", loops)
+# print("elapsed time: ", seconds)
+# print("answer euler5(20): ", answer)
 
 
 #==================================================
