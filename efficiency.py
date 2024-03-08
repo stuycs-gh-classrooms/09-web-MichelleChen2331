@@ -80,23 +80,23 @@ print("euler5(4):", euler5(4))
 print("Timing slow version:")
 
 #YOUR CODE HERE
-# answer = euler5_loop_count(10)
-# print("loop count:", answer)
-# print("euler5(10): ", euler5(10))
-# seconds = time.time() 
-# print("elapsed time: ", seconds)
+answer = euler5_loop_count(10)
+print("loop count:", answer)
+print("euler5(10): ", euler5(10))
+seconds = time.time() 
+print("elapsed time: ", seconds)
 
 
-# print("Second slow version test:")
+print("Second slow version test:")
 #YOUR CODE HERE
 
-# answer = euler5_loop_count(20)
+#answer = euler5_loop_count(20)
 #YOUR CODE HERE
 
-# print("loop count: ", answer)
-# seconds = time.time()
-# print("elapsed time: ", seconds)
-# print("answer euler5(20)", euler5(20))
+#print("loop count: ", answer)
+#seconds = time.time()
+#print("elapsed time: ", seconds)
+#print("answer euler5(20)", euler5(20))
 
 # End Problem 1
 #==================================================
@@ -127,26 +127,26 @@ print("Timing slow version:")
 def euler5_better(n):
     guess = n
     max_divisor = 1
-    count = 0 
+    loops = 0
     while (max_divisor <= n):
-        count += 1
+        loops += 1
         if guess % max_divisor == 0:
             max_divisor+= 1
         else:
-            guess+= 20
+            guess+= 1
             max_divisor = 1
 
-    print(count)
+    return(loops)
 
 print("\nBetter version:")
 # Dont forget to include time code as well
-loops = euler5_better(2520)
+count = euler5_better(20)
 seconds = time.time()
 
-answer = euler5_better(20)
-print("loop count:", loops)
-# print("elapsed time: ", seconds)
-# print("answer euler5(20): ", answer)
+answer = euler5(20)
+#print("loop count:", count)
+#print("elapsed time: ", seconds)
+print("answer euler5(20): ", answer)
 
 
 #==================================================
@@ -172,7 +172,9 @@ def lcm(max_divisor, guess):
 # euler5 function.
 
 
-
+def lcm_better(max_divisor, guess):
+    from math import gcd
+    return abs(max_divisor*guess) // gcd(max_divisior, guess)
 
 
 # End advanced approach
