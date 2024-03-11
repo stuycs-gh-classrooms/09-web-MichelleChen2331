@@ -19,6 +19,7 @@ import time #needed for later
 
 # The following function follows the above algorithm:
 def euler5(n):
+    t = time.time()
     guess = n
     max_divisor = 1
     while max_divisor <= n:
@@ -42,6 +43,7 @@ print("euler5(10): ", answer)
 # it prints out the total number of loops needed to get the answer.
 
 def euler5_loop_count(n):
+    t = time.time()
     guess = n
     max_divisor = 1
     loops = 0
@@ -90,13 +92,13 @@ print("elapsed time: ", seconds)
 print("Second slow version test:")
 #YOUR CODE HERE
 
-#answer = euler5_loop_count(20)
+answer = euler5_loop_count(20)
 #YOUR CODE HERE
 
-#print("loop count: ", answer)
-#seconds = time.time()
-#print("elapsed time: ", seconds)
-#print("answer euler5(20)", euler5(20))
+print("loop count: ", answer)
+seconds = time.time()
+print("elapsed time: ", seconds)
+print("answer euler5(20)", euler5(20))
 
 # End Problem 1
 #==================================================
@@ -125,18 +127,27 @@ print("Second slow version test:")
 # But eventually, you should be able to get the loop count
 # for 20 down to 51,473,642.
 def euler5_better(n):
+    t = time.time()
     guess = n
     max_divisor = 1
     loops = 0
-    while (max_divisor <= n):
+    result = 1
+
+    while max_divisor <= n:
         loops += 1
         if guess % max_divisor == 0:
-            max_divisor+= 1
+            result = result * max_divisor // gcd(result, max_divisor)
+            max_divisor += 1
         else:
-            guess+= 1
+            guess += 1
             max_divisor = 1
 
-    return(loops)
+    return result
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
 
 print("\nBetter version:")
 # Dont forget to include time code as well
@@ -144,8 +155,8 @@ count = euler5_better(20)
 seconds = time.time()
 
 answer = euler5(20)
-#print("loop count:", count)
-#print("elapsed time: ", seconds)
+print("loop count:", count)
+print("elapsed time: ", seconds)
 print("answer euler5(20): ", answer)
 
 
@@ -172,10 +183,22 @@ def lcm(max_divisor, guess):
 # euler5 function.
 
 
-def lcm_better(max_divisor, guess):
-    from math import gcd
-    return abs(max_divisor*guess) // gcd(max_divisior, guess)
+def euler5_best(limit):
+    t = time.time()
+    result = 1
+    i = 1
+    loops = 0
+    while i <= limit:
+        loops += 1
+        result = lcm(result, i)
+        i += 1
+    return result, i, loops, t
 
+a, b, c, d = euler5_best(20)
+print("Best Verison:")
+print("elapsed time:", d)
+print("loop count:", c)
+print("answer euler5(20):", a)
 
 # End advanced approach
 #==================================================
