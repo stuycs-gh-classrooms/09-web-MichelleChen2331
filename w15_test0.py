@@ -1,4 +1,4 @@
-#pas
+
 #Question 2
 def ques2(num):
     if num > 99:
@@ -23,4 +23,25 @@ def no_a(s):
 print(no_a('apple'))
 print(no_a('dog'))
     
-        
+#Question 5
+
+def Mr(name):
+    a = name.find(' ')
+    last_name = name[a + 1:]
+    new = "Mr." + last_name
+    return new
+
+print(Mr("John Doe")) 
+
+#Question 2
+
+def avg(num1, num2, num3):
+    average = (num1 + num2 + num3)/3
+    return average
+
+print(avg(3, 4, 7))
+# average should be 4.66...7
+
+
+
+
