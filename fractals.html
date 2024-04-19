@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Michelle's Fractals</title>
+    <h1>Fractals and Mods</h1>
+  </head>
+
+  <body>
+    <div>
+    <h2>Koch Curve</h2>
+    <p>
+        "Basic curve"
+        <code>draw_koch(t, 4, 450)</code>
+        <img src="koch.png">
+    </p>
+    <p>
+        " This is a koch curve except you can adjust
+        the width of the pen and the pen's color is blue"
+        <code> draw_koch_mod(t, 4, 400, 20)</code>
+    </p>
+    <img src="koch_mod.png">
+    <pre>
+        <code>
+            "def draw_koch_mod(t, depth, length, width):
+            t.width(width)
+            if depth == 1:
+                t.pencolor("blue")
+                t.pd()
+                t.forward(length)
+            else:
+                t.pencolor("blue")
+                draw_koch_mod(t, depth-1, length/3, width-2)
+                t.left(60)
+                draw_koch_mod(t, depth-1, length/3, width-5)
+                t.right(120)
+                draw_koch_mod(t, depth-1, length/3, width-2)
+                t.left(60)
+                draw_koch_mod(t, depth-1, length/3, width-5)"
+        </code>
+    </pre>
+</div>
+    <hr>
+    <div>
+    <h2>Sierpinski Triangle</h2>
+    <p>
+        "Basic Triangle"
+        <code>draw_sierpinski(t, 4, 300)</code>
+    </p>
+    <img src="sierpinski.png">
+    <p>
+        "This is like the sierpinski triangle 
+        except it adds circles to the inside of 
+        some of the triangles and it fills them With
+        red. The pensize is also randomized from 1 to 5."
+        <code>draw_sierpinski_mod(t, 4, 400)</code>
+    </p>
+    <img src="sierpinski_mod.png">
+    <pre>
+        <code>
+            "def draw_sierpinski_mod(t, depth, length):
+            size = randint(1, 5)
+            if depth == 1:
+                t.pensize(size)
+                for i in range(3):
+                    t.forward(length)
+                    t.left(120)
+            else:
+                t.pensize(size)
+                t.color("green", "red")
+                draw_sierpinski_mod(t, depth-1, length/2)
+                t.forward(length/2)
+                t.left(60)
+                t.forward(length/4)
+                t.begin_fill()
+                t.circle(length/7)
+                t.end_fill()
+                t.back(length/4)
+                t.right(60)
+                draw_sierpinski_mod(t, depth-1, length/2)
+                t.backward(length/2)
+                t.left(60)
+                t.forward(length/2)
+                t.right(60)
+                draw_sierpinski_mod(t, depth-1, length/2)
+                t.left(60)
+                t.backward(length/2)
+                t.right(60)"
+        </code>
+    </pre>
+</div>
+    <hr>
+    <div>
+    <h2>Trees</h2>
+    <p>
+        "Basic Tree"
+        <code>tree(t, 4, 50, 30)</code>
+    </p>
+    <img src="tree.png">
+    <p>"This tree's pencolor is brown to model after a tree's body
+        and the length of the subtrees are randomized with the addition
+        of a number from -10 to 10. The pensize of the tree is also randomized."
+        <code>tree_mod(t, 5, 50, 20)</code>
+    </p>
+    <img src="tree_mod.png">
+    <pre>
+        <code>
+            "def tree_mod(t, depth, length, angle):
+            if depth == 1:
+                t.forward(length)
+            else:
+                t.pensize(randint(1, 15))
+                t.pencolor("brown")
+                length += (randint(-10, 10))
+                t.forward(length)
+                t.right(angle)
+                tree_mod(t, depth-1, length, angle)
+                t.backward(length)
+                t.left(angle*2)
+                tree_mod(t, depth-1, length, angle)
+                t.backward(length)
+                t.right(angle)"
+        </code>
+    </pre>
+</div>
+  </body>
+
+
+</html>
