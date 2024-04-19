@@ -1,0 +1,17 @@
+html {
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+title {
+    text-align: center;
+    font-size: large;
+    
+}
+
+body {
+        font-family: cursive, sans-serif;
+        font-size: 1.3rem;
+        font-weight: bolder;
+        font-style: italic;
+}
