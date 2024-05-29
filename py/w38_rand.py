@@ -3,8 +3,7 @@ print('Content-type: text/html\n')
 
 from random import random
 r = random()
-def html():
-    stuff = '''<!DOCTYPE html>
+stuff = """<!DOCTYPE html>
 
 <html lang="en">
 
@@ -19,6 +18,5 @@ def html():
     </p>
   </body>
 
-</html>'''
-    return(stuff)
-print('Some random number:', html, r)
+</html>"""
+print('Some random number:', stuff, r)
