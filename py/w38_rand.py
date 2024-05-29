@@ -14,13 +14,11 @@ stuff = """<!DOCTYPE html>
 
   <body>
     <p>
-      <img src="py/lottery.png" alt="Lottery Logo">
-      <li>
-    <ul>
-      Reload to generate the lottery number
+      <img src="lottery.png" alt="Lottery Logo">
+      <ul>
+      <li> Reload to generate the lottery number </li>
       </ul>
-      </li>
-    </p>
+      </p>
   </body>
 
 </html>"""
