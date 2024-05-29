@@ -14,9 +14,14 @@ stuff = """<!DOCTYPE html>
 
   <body>
     <p>
-      Reload to generate a random number
+      <img src="py/lottery.png" alt="Lottery Logo">
+      <li>
+    <ul>
+      Reload to generate the lottery number
+      </ul>
+      </li>
     </p>
   </body>
 
 </html>"""
-print('Some random number:', stuff, r)
+print(stuff, 'Some random lotto number:', r)
