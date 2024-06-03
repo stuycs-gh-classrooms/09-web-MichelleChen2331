@@ -23,7 +23,7 @@ HTML_FOOTER = """
 
 data = cgi.FieldStorage()
 
-file = open("Words.txt")
+file = open("Words")
 
 html = HTML_HEADER
 html += '<br><a href="Webpage.html">Back</a>'
