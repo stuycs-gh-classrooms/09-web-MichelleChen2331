@@ -25,9 +25,11 @@ data = cgi.FieldStorage()
 file = "TestDoc.txt"
 if ('Words' in data):
     file = data['Words'].value
+    'Words'.open()
 
 html = HTML_HEADER
-html += str(file)
+##html += file.readlines
 html += '<br><a href="Webpage.html">Back</a>'
 html += HTML_FOOTER
 print(html)
+print('Words')
