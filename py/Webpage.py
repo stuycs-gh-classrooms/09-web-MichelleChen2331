@@ -22,11 +22,12 @@ HTML_FOOTER = """
 """
 
 data = cgi.FieldStorage()
-
-file = open("Words")
+file = "TestDoc.txt"
+if ('Words' in data):
+    file = data['Words'].value
 
 html = HTML_HEADER
+html += str(file)
 html += '<br><a href="Webpage.html">Back</a>'
-html += print(file.read())
 html += HTML_FOOTER
 print(html)
