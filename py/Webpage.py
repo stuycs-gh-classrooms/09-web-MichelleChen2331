@@ -25,4 +25,5 @@ data = cgi.FieldStorage()
 
 html = HTML_HEADER
 html += '<br><a href="Webpage.html">Back</a>'
+html += HTML_FOOTER
 print(html)
