@@ -25,7 +25,7 @@ data = cgi.FieldStorage()
 file = "TestDoc.txt"
 if ('Words' in data):
     file_contents = data['Words'].value
-    f = open('Words.txt')
+    f = open(file_contents)
     file_read = f.read()
 
 html = HTML_HEADER
