@@ -24,12 +24,14 @@ HTML_FOOTER = """
 data = cgi.FieldStorage()
 file = "TestDoc.txt"
 if ('Words' in data):
-    file = data['Words'].value
-    file.open()
+    file_contents = data['Words'].value
+    f = open('Words.txt')
+    file_read = f.read()
 
 html = HTML_HEADER
 html += "<p>"
-html += file.readlines()
+html += print(file_read())
+f.close()
 html += "</p>"
 html += '<br><a href="Webpage.html">Back</a>'
 html += HTML_FOOTER
