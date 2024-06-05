@@ -29,7 +29,7 @@ if ('Words' in data):
 
 html = HTML_HEADER
 html += "<p>"
-html += print(file.readlines())
+html += file.readlines()
 html += "</p>"
 html += '<br><a href="Webpage.html">Back</a>'
 html += HTML_FOOTER
